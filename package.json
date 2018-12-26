@@ -1,0 +1,25 @@
+{
+  "name": "mq-respond",
+  "version": "1.0.0",
+  "description": "Vanilla js lib which handles responsive javascript using matchMedia method",
+  "main": "mqRes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarthMarcius/mq-respond.git"
+  },
+  "keywords": [
+    "mq-respond",
+    "responsive",
+    "javascript",
+    "matchMedia"
+  ],
+  "author": "markiyan_pyts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DarthMarcius/mq-respond/issues"
+  },
+  "homepage": "https://github.com/DarthMarcius/mq-respond#readme"
+}
