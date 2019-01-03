@@ -4,7 +4,7 @@ Vanilla js lib which handles responsive javascript using matchMedia method
 ## Installation
 Include the mqRes in your page via script tag or require it from npm.
 
-There is 2 mqRes.js and mqRes.js files in repo.
+There is 2 mqRes.js and mqRes.min.js files in repo.
 
 ## Usage
 Lib creates class mqRes on window object, you need to create an instance of it and pass array with media queries objects to it.
