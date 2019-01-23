@@ -59,7 +59,7 @@ window.mqRes.prototype = {
 
         this.isMediaAttached = true;
     },
-    responseMedia: function (watcher) {
+    responseMedia: function (watcher, callbackFromAdd) {
         var that = this,
             matchingLabel = that.getMatchingLabel(watcher);
 
@@ -73,9 +73,13 @@ window.mqRes.prototype = {
 
         if (watcher.matches) {
             setTimeout(function () {
-                that.callbacks.forEach(function (callback) {
-                    callback(that.status);
-                });
+                if (callbackFromAdd) {
+                    callbackFromAdd(that.status);
+                } else {
+                    that.callbacks.forEach(function (callback) {
+                        callback(that.status);
+                    });
+                }
             }, 10);
         }
     },
@@ -95,6 +99,10 @@ window.mqRes.prototype = {
             if (!this.mediaQueries.length) {
                 throw 'media queries list is not set, please set it and try again';
             }
+
+            this.watchers.forEach(function (watcher) {
+                this.responseMedia(watcher, callback);
+            }.bind(this));
 
             this.callbacks.push(callback);
         } else {
