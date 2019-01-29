@@ -6,6 +6,7 @@ window.mqRes = function (mediaQueries) {
     this.labels = [];
     this.callbacks = [];
     this.isMediaAttached = false;
+    this.currentViewport = '';
 
     this.init(mediaQueries);
 };
@@ -66,6 +67,7 @@ window.mqRes.prototype = {
         if (watcher.matches) {
             if (matchingLabel) {
                 that.status[matchingLabel] = true;
+                that.currentViewport = matchingLabel;
             }
         } else if (matchingLabel) {
             that.status[matchingLabel] = false;
@@ -108,5 +110,8 @@ window.mqRes.prototype = {
         } else {
             throw 'callback must be a function';
         }
+    },
+    getBreakpoint: function () {
+        return this.currentViewport;
     }
 };
