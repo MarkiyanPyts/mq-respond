@@ -1,6 +1,6 @@
 {
   "name": "mq-respond",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vanilla js lib which handles responsive javascript using matchMedia method",
   "main": "mqRes.js",
   "scripts": {

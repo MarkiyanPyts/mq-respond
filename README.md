@@ -84,4 +84,13 @@ mqRespond.add(function (status) {
     }
 });
 ```
+Also you have possibility to get the current viewport outside add callback, like so
 
+```mqRespond.getBreakpoint();```
+
+This way you can write code like:
+```
+if (mqRespond.getBreakpoint() == 'desktop') {
+    console.log('It seems we are on desktop my king');
+}
+```
